@@ -5,13 +5,8 @@ const Banner = () => {
   return (
       <div className='max-w-screen-2xl container mx-auto lg:px-24 px-4
       bg-gradient-to-r from-[#FAFAFA] from-0% to-[#FCFCFC] to-100% '>
-          <div className='py-24 flex flex-col md:flex-row justify-between items-center gap-8'>
-              {/* text */}
-              <div className='md:w-1/2 space-y-7 px-4'>
-                <h2 className='md:text-5xl text-4xl font-bold md:leading-snug leading-snug'>Dive into Delights of Delectable <span className='text-green'>Food </span></h2>
-                <p className='text-xl text-[#4A4A4A]'>Where Each  plate Weaves a Story of culinary Mastery and Passionate Cerftsmanship</p>
-                <button className='btn bg-green px-8  py-3 font semibold text-white rounded-full'> Order Now</button>
-              </div>
+      <div className='py-24 flex flex-col md:flex-row-reverse justify-between items-center gap-8'>
+          {/* Image */}
             <div className='md:w-1/2'>
                 <img src={Banner_img} alt="" />
                 <div className='flex flex-col md:flex-row items-center justify-around -mt-14 gap-4'>
@@ -48,6 +43,12 @@ const Banner = () => {
                     </div>  
                 </div>                   
             </div>
+              {/* text */}
+              <div className='md:w-1/2 space-y-7 px-4'>
+                  <h2 className='md:text-5xl text-4xl font-bold md:leading-snug leading-snug'>Dive into Delights of Delectable <span className='text-green'>Food </span></h2>
+                  <p className='text-xl text-[#4A4A4A]'>Where Each  plate Weaves a Story of culinary Mastery and Passionate Cerftsmanship</p>
+                  <button className='btn bg-green px-8  py-3 font semibold text-white rounded-full'> Order Now</button>
+              </div>
         </div>  
       </div>
   )

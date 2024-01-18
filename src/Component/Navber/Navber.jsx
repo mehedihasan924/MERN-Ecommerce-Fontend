@@ -1,9 +1,27 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { LuPhoneCall } from "react-icons/lu";
 import logo from './../../../src/assets/services/logo.png'
 
 
 const Navber = () => {
+  const [isSticky, setIsSticky] = useState(false);
+
+  useEffect(() => {
+    const haldeeScrol = () => {
+      const offset = window.scrollY;
+      if (offset > 0) {
+          setIsSticky(true)
+      } else {
+        setIsSticky(false)
+      }
+
+
+    }
+    window.addEventListener("scroll", haldeeScrol);
+    return () => {
+        window.addEventListener("scroll", haldeeScrol);
+  }
+  },[])
   const navItems =
     <>
          <li>
@@ -32,8 +50,8 @@ const Navber = () => {
       <li><a>Offers</a></li>
    </>
   return (
-    <header className='max-w-screen-2xl container mx-auto'> 
-      <div className="navbar xl:px-24">
+    <header className='max-w-screen-2xl container mx-auto fixed top-0 left-0 right-0 transition-all duration-300s ease-in-out z-10'> 
+      <div className={`navbar xl:px-24 ${isSticky ? "shadow-md bg-base-100 transition-all duration-300s ease-in-out" : ""}`}>
   <div className="navbar-start">
     <div className="dropdown">
       <div tabIndex={0} role="button" className="btn btn-ghost lg:hidden">
