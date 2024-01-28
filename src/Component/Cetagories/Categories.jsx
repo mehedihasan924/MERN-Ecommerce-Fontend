@@ -1,29 +1,33 @@
 import React from 'react'
-import image from "./../../assets/category/img1.png"
+import image1 from "./../../assets/category/img1.png"
+import image2 from "./../../assets/category/img2.png"
+import image3 from "./../../assets/category/img3.png"
+import image4 from "./../../assets/category/img4.png"
+
 const categoriesItems = [
   {
     id: 1,
     title: "Main Dish",
     des: "(86 dishes)",
-    image:{image}
+    image: image1
   },
     {
     id: 2,
     title: "Break Fast",
     des: "(12 break fast)",
-    image:"./../../assets/category/img2.png"
+    image: image2
   },
      {
     id:3,
     title: "Dessert",
     des: "(12 dessert)",
-    image:"./../../assets/category/img3.png"
+    image: image3
   },
      {
     id:4,
     title: "Browse All",
     des: "(120 Items)",
-    image:"./../../assets/category/img4.png"
+    image: image4
   }    
 ]
 const Categories = () => {
