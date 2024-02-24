@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+/* eslint-disable no-unused-vars */
+import React, { useEffect, useState } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
@@ -6,7 +7,18 @@ import Slider from "react-slick";
 const Specialdishes = () => {
   
   const [recipes, setRecipes] = useState([]);
+
   const slider = React.useRef(null)
+
+  useEffect(() => {
+    fetch("../public/menu.json")
+    .then(res => res.json())
+      .then(data => {
+        const specials = data.filter((item) => item.category==="popular")
+        console.log(specials)
+      })
+
+  },[])
 
     const settings = {
     dots: true,

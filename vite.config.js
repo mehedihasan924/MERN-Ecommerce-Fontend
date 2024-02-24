@@ -6,5 +6,7 @@ export default defineConfig({
   plugins: [react()],
     server: {
     port: 4000 // Change the port to your desired port number
-  }
+    }
+  
+
 })

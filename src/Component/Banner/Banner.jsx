@@ -16,11 +16,11 @@ const Banner = () => {
                       <div className='space-y-1'>
                         <h5 className='font-medium mb-1'>Spicy noodles</h5>
                         <div className="rating rating-sm">
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" checked />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" checked />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
                         </div>
                         <p className='text-red'> $18.00</p>
                       </div>            
@@ -32,11 +32,11 @@ const Banner = () => {
                       <div className='space-y-1'>
                         <h5 className='font-medium mb-1'>Spicy noodles</h5>
                         <div className="rating rating-sm">
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" checked />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
-                            <input type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly  type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" checked />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
+                            <input readOnly type="radio" name="rating-2" className="mask mask-star-2 bg-yellow-500" />
                         </div>
                         <p className='text-red'> $18.00</p>
                       </div>            
