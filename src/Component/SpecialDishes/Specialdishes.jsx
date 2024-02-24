@@ -1,9 +1,13 @@
-import React from 'react'
+import React, { useState } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 
 const Specialdishes = () => {
+  
+  const [recipes, setRecipes] = useState([]);
+  const slider = React.useRef(null)
+
     const settings = {
     dots: true,
     infinite: false,
@@ -71,6 +75,7 @@ const Specialdishes = () => {
           <h3>8</h3>
         </div>
       </Slider>
+
       </div>
   )
 }
