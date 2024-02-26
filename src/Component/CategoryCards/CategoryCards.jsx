@@ -1,17 +1,31 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-
-import React from 'react'
-const CategoryCards = ({item}) => {
-  return (
-    <div className="card w-96 bg-base-100 shadow-xl">
-        <img src={item.image} />
+import React, { useState } from 'react'
+import { Link } from 'react-router-dom'
+import { FaHeart } from "react-icons/fa";
+const CategoryCards = ({ item }) => {
+    const[ isHeartFillted, seIstHeartFillted]=useState(false)
+    const handleHeartClick = () => {
+        seIstHeartFillted(!isHeartFillted)
+    }
+    return (
+        <div className="card w-96 bg-base-100 shadow-xl relative">
+            <div className={`rating gap-1 absolute`}>
+               <FaHeart className='h-5 w-5 cursor-pointer' />
+            </div>
+          <Link to={`/menu/${item._id}`}>
+              <figure>
+                  <img src={item.image} alt=''
+                    className='hover:scale-105 transition-all duration-200 md:h-72'
+                  />
+              </figure>
+          </Link>
         <div className="card-body">
-              <h2 className="card-title">{ item.name}</h2>
+              <h2 className="card-title">{item.name}</h2>
             <p>If a dog chews shoes whose shoes does he choose?</p>
               <div className="card-actions justify-between items-center mt-2">
-                  <h5 className='font-semibold'> <span>$</span> {item.price}</h5>
-            <button className="btn bf-green text-white">Buy Now</button>
+                  <h5 className='font-semibold'> <span className='text-sm text-red'>$</span> {item.price}</h5>
+            <button className="btn bg-green text-white">Buy Now</button>
             </div>
         </div>
     </div>
