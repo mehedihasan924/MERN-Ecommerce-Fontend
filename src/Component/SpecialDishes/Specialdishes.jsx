@@ -6,10 +6,34 @@ import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import CategoryCards from '../CategoryCards/CategoryCards';
 
-const Specialdishes = () => {
-  
-  const [recipes, setRecipes] = useState([]);
+const simpleNextArroe = (props) => {
+  const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "red"}}
+      onClick={onClick}
+    >
+      Next
+    </div>
+  );
+};
+const simplePrevArrow = (props) => {
+   const { className, style, onClick } = props;
+  return (
+    <div
+      className={className}
+      style={{ ...style, display: "block", background: "green"}}
+      onClick={onClick}
+    >
+       Back
+    </div>
+  );
+}
 
+
+const Specialdishes = () => {
+  const [recipes, setRecipes] = useState([]);
   const slider = React.useRef(null)
 
   useEffect(() => {
@@ -54,16 +78,23 @@ const Specialdishes = () => {
           slidesToScroll: 1
         }
       }
-    ]
+      ],
+      nextArrow: <simpleNextArroe></simpleNextArroe>,
+      prevArrow:<simplePrevArrow></simplePrevArrow>
+    
   };
   return (
       <div className='max-w-screen-2xl lg:px-24 container my-20'>
           <div className='text-left'>
               <p className='text-red text-lg font-semibold uppercase tracking-wide'>special Dishes </p>
               <h2 className='text-4xl md:text-5xl md:w-[520px] font-bold my-2 md:leanding-snug leading-snug'> Standout Dishes  From Our Menu</h2>
-          </div>
+      </div>
+      <div>
+        <button onClick={()=>slider?.current?.slickPrev()} className='bnt p-2 rounded-full ml-5'> Prev</button>
+          <button onClick={()=>slider?.current?.slickPrev()}>Next</button>
+      </div>
         {/* Slider React Slick */}
-         <Slider {...settings}>
+         <Slider ref={slider} {...settings}>
         {
           recipes.map((item, i) => (
             <CategoryCards key={i}
