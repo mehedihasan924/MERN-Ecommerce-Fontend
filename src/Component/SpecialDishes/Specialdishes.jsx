@@ -1,36 +1,36 @@
 /* eslint-disable react/jsx-key */
 /* eslint-disable no-unused-vars */
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState,useRef } from 'react'
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import Slider from "react-slick";
 import CategoryCards from '../CategoryCards/CategoryCards';
 
-const simpleNextArroe = (props) => {
-  const { className, style, onClick } = props;
+const simpleNextArrow = (props) => {
+   const { className, style, onClick } = props;
+  return (
+    <div
+        className={className}
+        style={{ ...style, display: "block", background: "green"}}
+        onClick={onClick}
+      >
+      Next
+    </div>
+  );
+};
+
+const simplePrevArrow = (props) => {
+   const { className, style, onClick} = props;
   return (
     <div
       className={className}
       style={{ ...style, display: "block", background: "red"}}
       onClick={onClick}
     >
-      Next
-    </div>
-  );
-};
-const simplePrevArrow = (props) => {
-   const { className, style, onClick } = props;
-  return (
-    <div
-      className={className}
-      style={{ ...style, display: "block", background: "green"}}
-      onClick={onClick}
-    >
        Back
     </div>
   );
 }
-
 
 const Specialdishes = () => {
   const [recipes, setRecipes] = useState([]);
@@ -52,7 +52,7 @@ const Specialdishes = () => {
     slidesToShow: 3,
     slidesToScroll: 3,
     gap:5,
-    initialSlide: 0,
+      initialSlide: 0,
     responsive: [
       {
         breakpoint: 1024,
@@ -79,11 +79,11 @@ const Specialdishes = () => {
         }
       }
       ],
-      nextArrow: <simpleNextArroe></simpleNextArroe>,
-      prevArrow:<simplePrevArrow></simplePrevArrow>
-    
+      nextArrow: <simpleNextArrow/>,
+      prevArrow:<simplePrevArrow/>  
   };
   return (
+
       <div className='max-w-screen-2xl lg:px-24 container my-20'>
           <div className='text-left'>
               <p className='text-red text-lg font-semibold uppercase tracking-wide'>special Dishes </p>
@@ -91,21 +91,20 @@ const Specialdishes = () => {
       </div>
       <div>
         <button onClick={()=>slider?.current?.slickPrev()} className='bnt p-2 rounded-full ml-5'> Prev</button>
-          <button onClick={()=>slider?.current?.slickPrev()}>Next</button>
+        <button onClick={()=>slider?.current?.slickPrev()} className='bnt p-2 rounded-full ml-5'>Next</button>
       </div>
         {/* Slider React Slick */}
          <Slider ref={slider} {...settings}>
-        {
-          recipes.map((item, i) => (
-            <CategoryCards key={i}
-             item={item}> 
-
-            </CategoryCards>))
-         }
+            {
+              recipes.map((item, i) => (
+                <CategoryCards key={i}
+                item={item}> 
+                </CategoryCards>))
+            }
         </Slider>
 
       </div>
   )
 }
 
-export default Specialdishes
+export default Specialdishes;

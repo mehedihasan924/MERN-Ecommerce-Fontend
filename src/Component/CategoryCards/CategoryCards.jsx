@@ -14,7 +14,7 @@ const CategoryCards = ({item}) => {
         <div className="card w-96 bg-base-100 shadow-xl relative mx-5 my-5">
             <div className={`rating gap-1 absolute right-2 top-2 p-4 heartstar rounded-tr-3xl  rounded-bl-3xl bg-green ${isHeartFillted ? "text-rose-500": "text-white" 
             }`}  onClick={handleHeartClick}>
-               <FaHeart className='h-5 w-5 cursor-pointer' />
+               <FaHeart className='h-5 w-5 cursor-pointer'/>
             </div>
           <Link to={`/menu/${item._id}`}>
               <figure>
